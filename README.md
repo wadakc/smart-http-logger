@@ -12,12 +12,14 @@
 
 ## introduction
 
-you can logging automatically http req/res information that come to your application's api.
+you can logging  http req/res information automatically, that come to your application's api.
 
 ```javaScript
 
-2019-04-19 20:20:00 ERROR 62593 --- [nio-8888-exec-2] j.s.s.logging.SmartHttpLogger            : [ 'method' = 'GET', 'url' = '/user/100', 'request' = 'null', 'status' = '401', 'response' = '{"status":401,"message":"authorization exception"}', 'time' = '82ms' ]
-2019-04-19 20:20:02  INFO 62593 --- [nio-8888-exec-3] j.s.s.logging.SmartHttpLogger            : [ 'method' = 'POST', 'url' = '/user', 'request' = '{"id":"1000","name":"kc","score":100}', 'status' = '200', 'response' = '{"id":"1000","name":"kc","score":100}', 'time' = '35ms' ]
+2019-04-19 20:20:00 ERROR 62593 --- [nio-8888-exec-2] j.s.s.logging.SmartHttpLogger            
+: [ 'method' = 'GET', 'url' = '/user/100', 'request' = 'null', 'status' = '401', 'response' = '{"status":401,"message":"authorization exception"}', 'time' = '82ms' ]
+2019-04-19 20:20:02  INFO 62593 --- [nio-8888-exec-3] j.s.s.logging.SmartHttpLogger           
+: [ 'method' = 'POST', 'url' = '/user', 'request' = '{"id":"1000","name":"kc","score":100}', 'status' = '200', 'response' = '{"id":"1000","name":"kc","score":100}', 'time' = '35ms' ]
 
 ```
 
@@ -34,20 +36,7 @@ you can logging automatically http req/res information that come to your applica
 
 ```
 
-### 2. scan this package to enable automatically logging.
-
-```java
-@SpringBootApplication
-@ComponentScan(basePackages = {"com.example.api","jp.springbootreference.smarthttplogger"}) // here.
-public class ApiApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(ApiApplication.class, args);
-	}
-
-}
-```
-
-### 3. modify log output as you like. 
+### 2. modify log output as you like. 
 
 ###### you can hide some http information by setting.
 
